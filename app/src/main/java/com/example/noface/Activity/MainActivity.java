@@ -1,8 +1,10 @@
-package com.example.noface;
+package com.example.noface.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.noface.R;
 
 public class MainActivity extends AppCompatActivity {
 
