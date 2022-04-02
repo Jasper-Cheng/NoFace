@@ -9,6 +9,10 @@ public class Constants {
     public static String LogPath = ROOT_PATH + "log/";
     public static String CrashPath= ROOT_PATH + "crash_user/";
     public static final String TOKEN = "token";
+    private static final String FILE_UnFORMAL="https://unformal.img.noface.com";
+    private static final String FILE_FORMAL="https://formal.img.noface.com";
+    public static final String FILE_URL = (FORMAL_ENVIRONMENT ? FILE_FORMAL : FILE_UnFORMAL);
+
 
     public class NetWorkUrl{
         public static final String unFormal = "https://unforaml.noface.com/";

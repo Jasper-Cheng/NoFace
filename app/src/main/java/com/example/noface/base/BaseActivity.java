@@ -1,6 +1,5 @@
 package com.example.noface.base;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -18,10 +17,6 @@ import com.example.noface.R;
 import com.example.noface.utils.StatusBarUtil;
 import com.example.noface.utils.WaitDialogUtil;
 import com.google.gson.Gson;
-
-/**
- * Created by 17258 on 2018/3/26.
- */
 
 public class BaseActivity extends AppCompatActivity {
     private WaitDialogUtil mDialog;
