@@ -1,6 +1,8 @@
-package com.example.noface.Utils;
+package com.example.noface.utils;
 
 import android.os.Environment;
+
+import com.example.noface.Constants;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,10 +15,10 @@ import java.util.Comparator;
 import java.util.Date;
 
 
-public class LogSaveUtils implements Runnable {
+public class LogSaveUtil implements Runnable {
     private String content;
 
-    public LogSaveUtils(String content) {
+    public LogSaveUtil(String content) {
         this.content = content;
     }
 
@@ -64,7 +66,7 @@ public class LogSaveUtils implements Runnable {
                 dir.mkdirs();
             }
 
-            String fileName = Constants.LogPath + DataTime.getFormattedTime(System.currentTimeMillis(), LOG_NAME_FORMAT) + FILE_NAME;
+            String fileName = Constants.LogPath + DataTimeUtil.getFormattedTime(System.currentTimeMillis(), LOG_NAME_FORMAT) + FILE_NAME;
             file = new File(fileName);
             if (!file.exists()) {
                 file.getParentFile().mkdirs();

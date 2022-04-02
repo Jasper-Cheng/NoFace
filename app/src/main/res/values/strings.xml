@@ -20,4 +20,7 @@
     <string name="October">十月</string>
     <string name="November">十一月</string>
     <string name="December">十二月</string>
+
+    <string name="crash_exit">很抱歉,程序出现异常,即将退出.</string>
+    <string name="loading">加载中...</string>
 </resources>

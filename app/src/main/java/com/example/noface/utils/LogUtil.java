@@ -1,4 +1,4 @@
-package com.example.noface.Utils;
+package com.example.noface.utils;
 
 
 import java.io.PrintWriter;
@@ -206,7 +206,7 @@ public class LogUtil {
     private static int ElectronicBrandPrintln(int priority, String tag, String msg, StackTraceElement stackTraceElement) {
         if (priority >= logType.value()) {
             if (priority >= 4) {
-                LogThreadPoolUtil.addTask(new LogSaveUtils(getLogInfo(priority, tag, msg, stackTraceElement)));
+                LogThreadPoolUtil.addTask(new LogSaveUtil(getLogInfo(priority, tag, msg, stackTraceElement)));
             }
             return android.util.Log.println(priority, tag, msg);
         } else {
@@ -248,7 +248,7 @@ public class LogUtil {
         // 获取类名.即包名+类名
         String className = stackTraceElement.getClassName();
 
-        logInfoStringBuilder.append(DataTime.getFormattedTime(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
+        logInfoStringBuilder.append(DataTimeUtil.getFormattedTime(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
         logInfoStringBuilder.append("  [");
         logInfoStringBuilder.append(threadName).append("]   ");
         logInfoStringBuilder.append(className).append("   ");

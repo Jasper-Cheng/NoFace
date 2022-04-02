@@ -1,4 +1,4 @@
-package com.example.noface.Utils;
+package com.example.noface.utils;
 
 
 import android.content.Context;
@@ -13,7 +13,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class DataTime {
+public class DataTimeUtil {
+    private static String TAG = "DataTimeUtil";
+
     public static int getWeek(Long time) {
         Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(time);
@@ -237,27 +239,17 @@ public class DataTime {
         return time;
     }
 
-    public static String getYYMMDDHHMMSS() {
+    public static String getCurrentYYMMDDHHMMSS() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return format.format(System.currentTimeMillis());
     }
 
-    public static long getLongTime(String timestr, String formatstr) {
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(formatstr);
-        Date date = null;
-        long ts = 0;
-        try {
-            date = simpleDateFormat.parse(timestr);
-            ts = date.getTime();
-        } catch (ParseException e) {
-            LogUtil.e("CalendarUtil", "getLongTime e = " + e.getMessage());
-            ts = 0;
-        }
-        return ts;
+    public static String getCurrentYYMMDDHHMMSS2() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        return format.format(System.currentTimeMillis());
     }
 
-    public static String getYYMMDD(String time) {
+    public static String getCurrentYYMMDD(String time) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         if (TextUtils.isEmpty(time)) {
             return format.format(System.currentTimeMillis());
@@ -265,12 +257,13 @@ public class DataTime {
             try {
                 return format.format(time);
             } catch (Exception e) {
+                LogUtil.i(TAG,"getCurrentYYMMDD:"+ e.getMessage());
                 return format.format(System.currentTimeMillis());
             }
         }
     }
 
-    public static String getYYMMDD2(long time) {
+    public static String getCurrentYYMMDD2(long time) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
         if (time < 100) {
             return format.format(System.currentTimeMillis());
@@ -278,6 +271,7 @@ public class DataTime {
             try {
                 return format.format(time);
             } catch (Exception e) {
+                LogUtil.i(TAG,"getCurrentYYMMDD2:"+ e.getMessage());
                 return format.format(System.currentTimeMillis());
             }
         }
@@ -296,6 +290,7 @@ public class DataTime {
             date = format1.parse(time);
             return date;
         } catch (Exception e) {
+            LogUtil.i(TAG,"getDateFromStringYYMMDD:"+ e.getMessage());
             return null;
         }
     }
@@ -311,7 +306,7 @@ public class DataTime {
         try {
             return format.format(time);
         } catch (Exception e) {
-            LogUtil.i("getDateFromStringYYMMDDHHMM", e.getMessage());
+            LogUtil.i(TAG,"getDateFromStringYYMMDDHHMM2:"+ e.getMessage());
             return format.format(System.currentTimeMillis());
         }
     }
@@ -321,7 +316,7 @@ public class DataTime {
         try {
             return format.format(time);
         } catch (Exception e) {
-            LogUtil.i("getDateFromStringYYMMDD", e.getMessage());
+            LogUtil.i(TAG,"getDateFromStringYYMMDDHHMM:"+ e.getMessage());
             return format.format(System.currentTimeMillis());
         }
     }
@@ -331,7 +326,7 @@ public class DataTime {
         try {
             return format.format(Long.parseLong(time));
         } catch (Exception e) {
-            LogUtil.i("getDateFromStringYYMMDDHHMM", e.getMessage());
+            LogUtil.i(TAG,"getDateFromStringYYMMDDHHMM:"+ e.getMessage());
             return format.format(System.currentTimeMillis());
         }
     }
@@ -341,7 +336,7 @@ public class DataTime {
         try {
             return format.format(Long.parseLong(time));
         } catch (Exception e) {
-            LogUtil.i("getDateFromStringYYMMDD", e.getMessage());
+            LogUtil.i(TAG,"getDateFromStringYYMMDD:"+ e.getMessage());
             return format.format(System.currentTimeMillis());
         }
     }

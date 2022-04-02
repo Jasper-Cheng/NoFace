@@ -1,12 +1,11 @@
-package com.example.noface.Activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.noface.activity;
 
 import android.os.Bundle;
 
 import com.example.noface.R;
+import com.example.noface.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

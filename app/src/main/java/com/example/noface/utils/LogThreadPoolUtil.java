@@ -1,4 +1,4 @@
-package com.example.noface.Utils;
+package com.example.noface.utils;
 
 
 import androidx.annotation.NonNull;
@@ -24,8 +24,8 @@ public class LogThreadPoolUtil {
         }
     });
 
-    public static void addTask(LogSaveUtils logSaveUtils) {
-        executor.execute(logSaveUtils);
+    public static void addTask(LogSaveUtil logSaveUtil) {
+        executor.execute(logSaveUtil);
     }
 
 
